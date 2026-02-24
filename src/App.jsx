@@ -5,10 +5,9 @@ function App() {
   return (
     <>
       <main>
-        <h1>Flash Cards: JavaScript</h1>
+        <h1>Flash Cards</h1>
         <FlashCardContainer />
       </main>
-      <footer>Made by Crystal D</footer>
     </>
   )
 }

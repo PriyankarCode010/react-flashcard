@@ -8,17 +8,19 @@ export const FlashCardContainer = () => {
     const [isFlipped, setIsFlipped] = useState(false);
 
     const handleNext = () => {
-        // here, prevIndex is the current value of currentIndex. this function within this set function is called the updater function. It takes the pending state (prevIndex) and calculates the next state from it.
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % flashcardsData.length);
-        setIsFlipped(false);  // resets the flipped state
+        setCurrentIndex((prevIndex) => (
+            prevIndex === flashcardsData.length - 1 ? flashcardsData.length - 1 : prevIndex + 1
+        ) % flashcardsData.length);
+        setIsFlipped(false);
     };
 
     const handlePrevious = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + flashcardsData.length) % flashcardsData.length);
-        setIsFlipped(false);  // resets the flipped state
+        setCurrentIndex((prevIndex) => (
+            prevIndex === 0 ? 0 : prevIndex - 1
+        ) % flashcardsData.length);
+        setIsFlipped(false); 
     };
 
-    // by using prev, it is ensured that the status is updated correctly, even when you make consecutive quick clicks.
     const handleFlip = () => {
         setIsFlipped((prev) => !prev);
     };
