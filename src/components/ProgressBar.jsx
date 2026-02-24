@@ -14,7 +14,7 @@ export const ProgressBar = ({ currentIndex, totalCards }) => {
                 </div>
             </div>
 
-            <div style={{ margin: '0 8px', flexShrink: '0' }}>{currentIndex + 1} of {totalCards}</div>
+            <div style={{ margin: '0 8px', flexShrink: '0', color: 'var(--dim-gray)' }}>{currentIndex + 1} of {totalCards}</div>
         </div>
     );
 };
